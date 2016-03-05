@@ -58,8 +58,16 @@
 					HIGHCHARTS_DATA: 'data.js',
 					HIGHCHARTS_DRILLDOWN: 'drilldown.js',
 					HIGHCHARTS_HEATMAP: 'heatmap.js',
-					HIGHCHARTS_NODATA: 'no-data-to-display.js'
+					HIGHCHARTS_NODATA: 'no-data-to-display.js',
+
+					MAP_EUROPE: 'europe.js',
+					MAP_GREECE: 'gr-all.js',
+
+					LIB_UNDERSCORE: 'underscore-min.js',
+					LIB_SIMPLE_STATISTICS: 'simple_statistics.min.js',
+					LIB_GENERATE_OPTIONS: 'generate-options.js',
 				}
+
 			},
 			TIMEOUT: 5000 /* 5 seconds timout for loading images */
 		},
