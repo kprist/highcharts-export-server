@@ -36,7 +36,11 @@
 					// Uncomment below if you have both Highcharts and Highmaps license
 					// HIGHCHARTS_MAP: 'map.js',
 					HIGHCHARTS_SOLID_GAUGE: 'solid-gauge.js',
-					BROKEN_AXIS: 'broken-axis.js'
+					BROKEN_AXIS: 'broken-axis.js',
+
+					LIB_UNDERSCORE: 'underscore-min.js',
+					LIB_SIMPLE_STATISTICS: 'simple_statistics.min.js',
+					LIB_GENERATE_OPTIONS: 'generate-options.js',
 				},
 				highstock: {
 					HIGHCHARTS: 'highstock.js',

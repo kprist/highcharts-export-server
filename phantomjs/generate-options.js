@@ -1,3 +1,73 @@
+function generateChartOptions(title, subtitle, data) {
+	// group by col_id
+	var colGroups = _.groupBy(data, function(dataRow) {
+		return dataRow[2];
+	});
+
+	var rowHeaders = _.sortBy(
+		 _.uniq(
+			_.map(data, function(dataRow) {
+				// row labels have to be non empty!
+				return {
+					id: dataRow[1],
+					label: dataRow[3] || ("Record " + dataRow[1])
+				};
+			}),
+			"id"
+		),
+		 "label"
+	);
+
+	var columns = _.map(colGroups, function(dataRows, columnId) {
+		var columnData = _.map(rowHeaders, function(rowHeader) {
+			// find the (only) dataRow with the row id of the header
+			var dataRow = _.find(dataRows, function(dataRow) {
+				return rowHeader.id == dataRow[1];
+			});
+
+			// and return its value OR null if it's not found
+			return (dataRow && dataRow[0]) || null;
+		});
+
+		// all dataRows have same column id/value, 
+		// so columnData first element is the column value of the first datarow
+		columnData.unshift(dataRows[0][4]);
+
+		return columnData;
+	});
+
+	// sort column items by column name (first in list)
+	columns = _.sortBy(columns, function(column) {
+		return column[0];
+	});
+
+	// the first item of the columns array is the list of row labels
+	var header = _.pluck(rowHeaders, "label");
+	// add an extra item at the start of the headers list
+	header.unshift("");
+
+	columns.unshift(header);
+
+	return {
+		chart: {
+			type: 'column'
+		},
+
+		title: {
+			text: title
+		},
+
+		subtitle: {
+			text: subtitle
+		},
+
+		data: {
+			columns: columns,
+			switchRowsAndColumns: true
+		}
+	};
+}
+
 function generateMapOptions(label, data, mapDataName, joinByField) {
 
 	return {
