@@ -68,7 +68,17 @@ function generateChartOptions(title, subtitle, data) {
 	};
 }
 
-function generateMapOptions(label, data, mapDataName, joinByField) {
+function generateMapOptions(label, data, mapDataName, joinByField, specification) {
+	// we need to preprocess the data if they're greek regions
+	// to convert the 'code' field from ELSTAT/NUTS2 codes into Highmaps keys
+
+	// these are included in the maps_configuration.js of current directory as CerifMapsConf.greekRegionCodes
+	var specificationCodes = CerifMapsConf.greekRegionCodes[specification];
+	if (specificationCodes) {
+		_.each(data, function(el) {
+			el.code = specificationCodes[el.code];
+		});
+	}
 
 	return {
 		title: {

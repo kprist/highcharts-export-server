@@ -68,6 +68,8 @@
 					MAP_EUROPE: 'europe.js',
 					MAP_GREECE: 'gr-all.js',
 
+					MAP_SPECIFICATION_DATA: 'maps_configuration.js',
+
 					LIB_UNDERSCORE: 'underscore-min.js',
 					LIB_SIMPLE_STATISTICS: 'simple_statistics.min.js',
 					LIB_TURF: 'turf.min.js',
