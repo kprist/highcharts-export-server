@@ -64,11 +64,13 @@
 					HIGHCHARTS_HEATMAP: 'heatmap.js',
 					HIGHCHARTS_NODATA: 'no-data-to-display.js',
 
+					MAP_WORLD: 'world-highres3.js',
 					MAP_EUROPE: 'europe.js',
 					MAP_GREECE: 'gr-all.js',
 
 					LIB_UNDERSCORE: 'underscore-min.js',
 					LIB_SIMPLE_STATISTICS: 'simple_statistics.min.js',
+					LIB_TURF: 'turf.min.js',
 					LIB_GENERATE_OPTIONS: 'generate-options.js',
 				}
 
